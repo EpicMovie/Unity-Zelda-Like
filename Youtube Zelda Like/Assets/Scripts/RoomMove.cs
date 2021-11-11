@@ -14,23 +14,26 @@ public class RoomMove : MonoBehaviour {
     public Text placeText;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
         cam = Camera.main.GetComponent<CameraMovement>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		
 	}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             cam.minPosition += cameraChange;
             cam.maxPosition += cameraChange;
             other.transform.position += playerChange;
-            if(needText)
+
+            if (needText)
             {
                 StartCoroutine(placeNameCo());
             }
@@ -43,6 +46,7 @@ public class RoomMove : MonoBehaviour {
         text.SetActive(true);
         placeText.text = placeName;
         yield return new WaitForSeconds(4f);
+
         text.SetActive(false);
     }
 

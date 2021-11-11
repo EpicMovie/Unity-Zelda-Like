@@ -7,12 +7,14 @@ public class emotionTry : MonoBehaviour {
     public GameObject questionBox;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		
 	}
 
@@ -21,7 +23,9 @@ public class emotionTry : MonoBehaviour {
         if (!questionBox.activeInHierarchy)
         {
             questionBox.SetActive(true);
-        }else{
+        }
+        else
+        {
             questionBox.SetActive(false);
         }
     }

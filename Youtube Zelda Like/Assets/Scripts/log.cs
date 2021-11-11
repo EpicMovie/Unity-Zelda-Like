@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class log : Enemy {
-
+public class log : Enemy 
+{
     private Rigidbody2D myRigidbody;
     public Transform target;
     public float chaseRadius;
@@ -11,9 +11,9 @@ public class log : Enemy {
     public Transform homePosition;
     public Animator anim;
 
-
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -21,7 +21,8 @@ public class log : Enemy {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void FixedUpdate () 
+    {
         CheckDistance();
 	}
 
@@ -44,7 +45,8 @@ public class log : Enemy {
         }
     }
 
-    private void ChangeState(EnemyState newState){
+    private void ChangeState(EnemyState newState)
+    {
         if(currentState != newState)
         {
             currentState = newState;

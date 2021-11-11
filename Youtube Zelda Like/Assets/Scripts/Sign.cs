@@ -11,18 +11,22 @@ public class Sign : MonoBehaviour {
     public bool playerInRange;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInRange)
+	void Update () 
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
-            if(dialogBox.activeInHierarchy)
+            if (dialogBox.activeInHierarchy)
             {
                 dialogBox.SetActive(false);
-            }else{
+            } 
+            else
+            {
                 dialogBox.SetActive(true);
                 dialogText.text = dialog;
             }
@@ -31,7 +35,7 @@ public class Sign : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
         }
@@ -39,7 +43,7 @@ public class Sign : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = false;
             dialogBox.SetActive(false);

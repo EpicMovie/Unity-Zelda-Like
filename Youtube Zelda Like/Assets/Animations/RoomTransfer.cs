@@ -12,18 +12,20 @@ public class RoomTransfer : MonoBehaviour {
     public string placeName;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             GameObject player = collision.gameObject;
             CameraMovement cam = Camera.main.GetComponent<CameraMovement>();

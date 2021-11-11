@@ -5,18 +5,20 @@ using UnityEngine;
 public class PlayerHit : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		
 	}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("breakable"))
+        if (other.CompareTag("breakable"))
         {
             other.GetComponent<pot>().Smash();
         }

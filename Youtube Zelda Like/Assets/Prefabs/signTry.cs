@@ -6,19 +6,21 @@ using UnityEngine.UI;
 public class signTry : MonoBehaviour {
 
     public GameObject dialogBox;
+    
     public Text dialogText;
     public string dialog;
-    public bool showDialog;
     public bool playerInRange;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+    {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInRange)
+	void Update () 
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && playerInRange)
         {
             ShowDialog();
         }
@@ -30,16 +32,18 @@ public class signTry : MonoBehaviour {
         {
             dialogBox.SetActive(true);
             dialogText.text = dialog;
-        }else{
+        }
+        else
+        {
             dialogBox.SetActive(false);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            if(!playerInRange)
+            if (playerInRange == false)
             {
                 other.GetComponent<emotionTry>().Question();
                 playerInRange = true;
